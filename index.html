@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventario Pro</title>
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📦 Inventario de Productos</h1>
+
+    <!-- FORMULARIO -->
+    <div class="card">
+        <form id="formulario">
+
+            <input type="text" id="nombre" placeholder="Producto" required>
+            <input type="text" id="descripcion" placeholder="Descripción">
+            <input type="text" id="proveedor" placeholder="Proveedor">
+
+            <input type="number" id="stockInicial" placeholder="Stock inicial" required>
+            <input type="number" id="entrada" placeholder="Entrada" value="0">
+            <input type="number" id="salida" placeholder="Salida" value="0">
+
+            <select id="unidad">
+                <option value="pieza">Pieza</option>
+                <option value="caja">Caja</option>
+                <option value="paquete">Paquete</option>
+            </select>
+
+            <button type="submit">Guardar</button>
+
+        </form>
+    </div>
+
+    <!-- BUSCADOR -->
+    <input type="text" id="buscar" placeholder="🔍 Buscar producto...">
+    <button onclick="exportarExcel()">📄 Exportar Inventario</button>
+
+    <!-- TABLA -->
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th>Proveedor</th>
+                    <th>Unidad</th>
+                    <th>Stock Inicial</th>
+                    <th>Entradas</th>
+                    <th>Salidas</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista"></tbody>
+        </table>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="resumen">
+        Total productos: <span id="total">0</span>
+    </div>
+
+    <!-- NOTA DE ENTREGA -->
+    <div class="card">
+        <h2>🧾 Nota de Entrega</h2>
+
+        <input type="text" id="persona" placeholder="Nombre de quien recibe">
+
+        <select id="productoNota"></select>
+        <input type="number" id="cantidadNota" placeholder="Cantidad">
+
+        <button onclick="agregarNota()">Agregar</button>
+        <button onclick="generarExcelNota()">📊 Descargar Nota en Excel</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="tablaNota"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+
+<!-- Excel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</body>
+</html>
