@@ -42,7 +42,7 @@ form input, form select {
 button {
     padding: 10px;
     border: none;
-    background: #2563eb;
+    background: #c61616;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-    background: #1e40af;
+    background: #c61616;
 }
 
 .editar {
@@ -76,7 +76,7 @@ table {
 }
 
 th {
-    background: #2563eb;
+    background: #c61616;
     color: white;
     font-weight: 600;
 }
